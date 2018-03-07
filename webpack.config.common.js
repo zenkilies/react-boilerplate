@@ -45,10 +45,13 @@ const Loaders = [
 
   {
     test: /\.(jpe?g|png|gif)$/i,
-    loaders: [
-      "file-loader",
-      "img-loader"
-    ]
+    loaders: (function () {
+
+      return process.env.NODE_ENV === "production"
+        ? ["file-loader", "img-loader"]
+        : ["file-loader"];
+
+    })()
   },
 
   /**
@@ -66,10 +69,13 @@ const Loaders = [
 
   {
     test: /(favicon|og-image).png/i,
-    loaders: [
-      "file-loader?name=[name].[ext]",
-      "img-loader"
-    ]
+    loaders: (function () {
+
+      return process.env.NODE_ENV === "production"
+        ? ["file-loader?name=[name].[ext]", "img-loader"]
+        : ["file-loader?name=[name].[ext]"];
+
+    })()
   }
 
 ];
