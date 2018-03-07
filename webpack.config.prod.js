@@ -7,7 +7,7 @@ const GLOBALS = {
   "process.env.NODE_ENV": JSON.stringify("production")
 };
 
-const extractLess = new ExtractTextPlugin({
+const extractSass = new ExtractTextPlugin({
   filename: "styles.css",
 });
 
@@ -36,19 +36,19 @@ export default {
     //   jQuery: "jquery",
     //   jquery: "jquery"
     // }),
-    extractLess,
+    extractSass,
   ],
   module: {
     loaders: Loaders.concat([{
-      test: /\.less$/,
-      use: extractLess.extract({
+      test: /\.(sass|scss)$/,
+      use: extractSass.extract({
         use: [{
           loader: "css-loader",
           options: {
             minimize: true
           }
         }, {
-          loader: "less-loader"
+          loader: "sass-loader"
         }],
         fallback: "style-loader"
       })

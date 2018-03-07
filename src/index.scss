@@ -1,0 +1,12 @@
+// Bootstrap Override
+@import "./styles/variables";
+
+// Bootstrap
+@import "./../node_modules/bootstrap/scss/bootstrap";
+
+// Components
+@import "./components/Header/index";
+
+// Containers
+@import "./containers/AboutPage/index";
+@import "./containers/HomePage/index";
