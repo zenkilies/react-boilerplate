@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
 
-import Header from "./../components/Header";
+import {Header} from "./../components";
 
 import AboutPage from "./AboutPage";
 import HomePage from "./HomePage";
@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="container mt-5">
 
         <Header/>
 
