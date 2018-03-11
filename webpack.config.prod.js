@@ -48,7 +48,10 @@ export default {
             minimize: true
           }
         }, {
-          loader: "sass-loader"
+          loaders: [
+            "resolve-url-loader",
+            "sass-loader?sourceMap"
+          ]
         }],
         fallback: "style-loader"
       })

@@ -37,7 +37,8 @@ export default {
       loaders: [
         'style-loader',
         'css-loader',
-        'sass-loader'
+        'resolve-url-loader',
+        'sass-loader?sourceMap'
       ]
     }])
   }

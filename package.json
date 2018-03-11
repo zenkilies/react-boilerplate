@@ -54,6 +54,7 @@
     "npm-run-all": "^4.1.2",
     "open": "0.0.5",
     "redux-immutable-state-invariant": "^2.1.0",
+    "resolve-url-loader": "^2.3.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
