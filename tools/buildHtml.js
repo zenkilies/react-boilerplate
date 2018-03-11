@@ -15,7 +15,7 @@ fs.readFile("src/index.html", "utf8", function (error, markup) {
 
   const version = Date.now();
 
-  $("head").append(`<link rel="stylesheet" href="styles.css?v=${version}">`);
+  $("head").append(`<link rel="stylesheet" href="/styles.css?v=${version}">`);
 
   $("body").find('script[src="/bundle.js"]').each(function () {
     $(this).attr("src", $(this).attr("src") + "?v=" + version);
