@@ -1,5 +1,11 @@
 import path from "path";
 
+require("dotenv").config();
+
+const Environments = {
+  "process.env.SERVICE_BASE": JSON.stringify(process.env.SERVICE_BASE)
+};
+
 const Loaders = [
 
   /**
@@ -80,4 +86,5 @@ const Loaders = [
 
 ];
 
+export {Environments};
 export {Loaders};

@@ -1,11 +1,11 @@
 import webpack from "webpack";
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-import {Loaders} from "./webpack.config.common";
+import {Environments, Loaders} from "./webpack.config.common";
 
-const GLOBALS = {
+const GLOBALS = Object.assign({}, Environments, {
   "process.env.NODE_ENV": JSON.stringify("production")
-};
+});
 
 const extractSass = new ExtractTextPlugin({
   filename: "styles.css",
@@ -24,18 +24,10 @@ export default {
     contentBase: "./dist"
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      debug: true,
-      noInfo: false
-    }),
+    new webpack.LoaderOptionsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin(GLOBALS),
     new webpack.optimize.UglifyJsPlugin(),
-    // new webpack.ProvidePlugin({
-    //   $: "jquery",
-    //   jQuery: "jquery",
-    //   jquery: "jquery"
-    // }),
+    new webpack.DefinePlugin(GLOBALS),
     extractSass,
   ],
   module: {
