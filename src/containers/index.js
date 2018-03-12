@@ -3,8 +3,8 @@ import {Switch, Route} from "react-router-dom";
 
 import {Header} from "./../components";
 
-import AboutPage from "./AboutPage";
-import HomePage from "./HomePage";
+import AboutPage from "./AboutPage/AboutPage";
+import HomePage from "./HomePage/HomePage";
 
 class App extends React.Component {
 

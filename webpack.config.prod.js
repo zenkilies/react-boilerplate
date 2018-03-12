@@ -42,17 +42,10 @@ export default {
     loaders: Loaders.concat([{
       test: /\.(sass|scss)$/,
       use: extractSass.extract({
-        use: [{
-          loader: "css-loader",
-          options: {
-            minimize: true
-          }
-        }, {
-          loaders: [
-            "resolve-url-loader",
-            "sass-loader?sourceMap"
-          ]
-        }],
+        use: [
+          "css-loader?minimize",
+          "resolve-url-loader",
+          "sass-loader?sourceMap",],
         fallback: "style-loader"
       })
     }])

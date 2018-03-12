@@ -5,8 +5,8 @@
 @import "./../node_modules/bootstrap/scss/bootstrap";
 
 // Components
-@import "./components/Header/index";
+@import "./components/Header/Header";
 
 // Containers
-@import "./containers/AboutPage/index";
-@import "./containers/HomePage/index";
+@import "./containers/AboutPage/AboutPage";
+@import "./containers/HomePage/HomePage";
