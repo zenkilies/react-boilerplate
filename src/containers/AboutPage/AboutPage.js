@@ -10,7 +10,7 @@ class AboutPage extends React.Component {
 
     return (
       <div>
-        This is a About Page!
+        This is About page!
       </div>
     );
 
