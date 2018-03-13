@@ -26,6 +26,14 @@ const Loaders = [
     ]
   },
 
+  {
+    test: /\.ya?ml$/,
+    loaders: [
+      'json-loader',
+      'yaml-loader'
+    ]
+  },
+
   /**
    * Web Fonts
    */
