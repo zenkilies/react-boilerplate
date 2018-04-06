@@ -1,6 +1,6 @@
 import React from "react";
 
-class HomePage extends React.Component {
+class AboutPage extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -9,11 +9,11 @@ class HomePage extends React.Component {
   render() {
 
     return (
-      <p>This is Home Page!</p>
+      <p>This is About Page!</p>
     );
 
   }
 
 }
 
-export default HomePage;
+export default AboutPage;

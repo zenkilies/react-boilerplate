@@ -2,6 +2,9 @@ import {Switch, Route} from "react-router-dom";
 
 import React from "react";
 
+import {Header} from "./../components";
+
+import AboutPage from "./AboutPage/AboutPage";
 import HomePage from "./HomePage/HomePage";
 
 class App extends React.Component {
@@ -9,9 +12,16 @@ class App extends React.Component {
   render() {
 
     return (
-      <Switch>
-        <Route exact path="/" component={HomePage}/>
-      </Switch>
+      <div className="container mt-4">
+
+        <Header/>
+
+        <Switch>
+          <Route exact path="/" component={HomePage}/>
+          <Route path="/about" component={AboutPage}/>
+        </Switch>
+
+      </div>
     );
 
   }

@@ -25,6 +25,7 @@
   "homepage": "https://github.com/zenkilies/react-boilerplate#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.0.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",

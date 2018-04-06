@@ -6,6 +6,8 @@ import {Router} from "react-router-dom";
 
 import React from "react";
 
+import "./index.scss";
+
 import App from "./containers";
 
 render(
