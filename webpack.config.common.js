@@ -62,7 +62,7 @@ const common = {
       ? ["file-loader", "img-loader"]
       : ["file-loader"])()
   }, {
-    test: /(favicon|og-image).png/i,
+    test: /(favicon).png/i,
     loaders: (() => process.env.NODE_ENV === "production"
       ? ["file-loader", "img-loader"]
       : ["file-loader"])()
