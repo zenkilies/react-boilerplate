@@ -1,11 +1,9 @@
 import {Switch, Route} from "react-router-dom";
-
 import React from "react";
 
 import {Header} from "./../components";
 
 import AboutPage from "./AboutPage/AboutPage";
-import CounterPage from "./CounterPage/CounterPage";
 import HomePage from "./HomePage/HomePage";
 
 class App extends React.Component {
@@ -20,7 +18,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route path="/about" component={AboutPage}/>
-          <Route path="/counter" component={CounterPage}/>
         </Switch>
 
       </div>
