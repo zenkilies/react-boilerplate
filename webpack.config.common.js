@@ -1,4 +1,12 @@
+import dotenv from "dotenv";
 import path from "path";
+
+// Read and override the environment variables from
+// .env file in the root folder.
+//
+// Reference: https://github.com/motdotla/dotenv
+
+dotenv.config();
 
 const common = {
 
@@ -10,7 +18,8 @@ const common = {
   // Reference: https://webpack.js.org/plugins/define-plugin/
 
   definePlugin: {
-    "process.env.NODE_ENV": JSON.stringify("development")
+    "process.env.NODE_ENV": JSON.stringify("development"),
+    "process.env.SERVICE_BASE": JSON.stringify(process.env.SERVICE_BASE),
   },
 
   // These options determine how the different types of modules

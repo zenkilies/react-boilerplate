@@ -22,7 +22,7 @@ export default {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.DefinePlugin(Object.assign({}, common.definePlugin, {
-      "process.env.NODE_ENV": JSON.stringify("development")
+      "process.env.NODE_ENV": JSON.stringify("production")
     })),
     extractSass
   ],
