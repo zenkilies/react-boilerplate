@@ -2,17 +2,23 @@ import "babel-polyfill";
 
 import {createBrowserHistory} from "history";
 import {render} from "react-dom";
-import {Router} from "react-router-dom";
 
+import {Provider} from "react-redux";
+import {Router} from "react-router-dom";
 import React from "react";
+
+import configureStore from "./store";
+import App from "./containers";
 
 import "./index.scss";
 
-import App from "./containers";
+const store = configureStore();
 
 render(
-  <Router history={createBrowserHistory()}>
-    <App/>
-  </Router>,
+  <Provider store={store}>
+    <Router history={createBrowserHistory()}>
+      <App/>
+    </Router>
+  </Provider>,
   document.getElementById("app")
 );
