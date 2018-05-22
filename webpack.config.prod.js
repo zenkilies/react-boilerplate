@@ -1,9 +1,9 @@
 import webpack from "webpack";
-import ExtractTextPlugin from "extract-text-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 import common from "./webpack.config.common";
 
-const extractSass = new ExtractTextPlugin({
+const extractCss = new MiniCssExtractPlugin({
   filename: "styles.css",
 });
 
@@ -24,19 +24,17 @@ export default {
     new webpack.DefinePlugin(Object.assign({}, common.definePlugin, {
       "process.env.NODE_ENV": JSON.stringify("production")
     })),
-    extractSass
+    extractCss
   ],
   module: {
     rules: common.rules.concat([{
       test: /\.(sass|scss)$/,
-      use: extractSass.extract({
-        use: [
-          "css-loader?minimize",
-          "resolve-url-loader",
-          "sass-loader?sourceMap"
-        ],
-        fallback: "style-loader"
-      })
+      use: [
+        MiniCssExtractPlugin.loader,
+        "css-loader?minimize",
+        "resolve-url-loader",
+        "sass-loader?sourceMap"
+      ]
     }])
   }
 };
